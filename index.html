@@ -3,50 +3,257 @@
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!-- layout container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on('click', function (event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 1000, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    });
+</script>
+
+<script>
+    // Automatic Slideshow - change image every 3 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 3000);
+    }
+</script>
+
+
 <style>
+    body {
+        /* background: linear-gradient(55deg,#ffffff 40%, #d4bab0 100%); */
+        /* background-color: white; */
+        /* #efede7 30%, */
+        /* background: linear-gradient(0deg, #ffffff 70%, #d4bab0  90%); */
+
+        /* Set a specific height */
+        height: 1000px;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
     .flex-container-1 {
         display: flex;
         flex-flow: row wrap;
         width: 100%;
         height: 400px;
         overflow: hidden;
+        /* background: linear-gradient(0deg, #ffffff 40%, #d4bab0 20%); */
     }
 
     .flex-container-2 {
         display: flex;
         flex-flow: row wrap;
         width: 100%;
+        height: 700px;
+    }
+
+    .flex-container-3 {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
         height: 600px;
+        /* background: linear-gradient(55deg, #ffffff 40%, #d4bab0 80%); */
     }
 
     .home-page-1 {
         width: 50%;
+        padding-top: 5%;
     }
 
     .edu-1 {
-        width: 50%;
-        padding: 10%;
+        width: 60%;
+        padding-top: 5%;
+        padding-left: 5%;
+        display: flex;
 
+        /* background-color: palevioletred; */
+    }
+
+    .edu-1-inner {
+        width: 100%;
+        padding: 5%;
+        overflow: auto;
+        /* background-color:white; */
+        /* border-radius: 50px;
+        box-shadow:10px 10px 10px rgba(0, 0, 0, 0.3); */
     }
 
     .edu-2 {
-        width: 50%;
-        padding: 10%;
+        width: 40%;
+        /* padding: 5%; */
+        padding-top: 7%;
+        padding-bottom: 7%;
 
+        /* background-color: palevioletred; */
+    }
+
+    .edu-2-inner {
+        width: 100%;
+        height: 50%;
+        padding-top: 1%;
+        overflow: auto;
+
+        /* background-color:white; */
+        /* /* border-radius: 50px; */
+        /* box-shadow:10px 10px 10px rgba(0, 0, 0, 0.3); */
+    }
+
+    .edu-2-inner-2 {
+        width: 100%;
+        height: 50%;
+        padding-left: 14%;
+        overflow: auto;
+        /* background-color:white; */
+        /* /* border-radius: 50px; */
+        /* box-shadow:10px 10px 10px rgba(0, 0, 0, 0.3); */
     }
 
     .img {
         width: 100%;
     }
 
+    .img-head {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        margin-top: 5%;
+        margin-left: 40%;
+        -webkit-filter: drop-shadow(5px 5px 5px #000000);
+        filter: drop-shadow(5px 5px 10px #888888);
+
+    }
+
+    .img-logo {
+        width: 70%;
+        -webkit-filter: drop-shadow(5px 5px 5px #000000);
+        filter: drop-shadow(5px 5px 10px #888888);
+    }
+
+    .img-logo-sjc {
+        width: 35%;
+    }
+
+    .img-logo-kmitl {
+        width: 75%;
+        overflow: hidden;
+    }
+
+    .img-50-bg {
+        width: 100%;
+        padding: 10%;
+    }
+
     .home-page-column-1 {
-        padding: 15%;
+        padding-left: 15%;
+        padding-right: 15%;
     }
 </style>
 
-<head>
-    <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow:10px 10px 10px rgba(0, 0, 0, 0.3);">
-        <a class="navbar-brand" style="font-weight:300;">Warissara's</a>
+<!-- flex 4 components -->
+<style>
+    .flex-container-4 {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        height: 700px;
+        /* background: linear-gradient(0deg, #ffffff 70%, #c7c7bb 10%); */
+    }
+
+    .ex-1 {
+        width: 100%;
+        padding-top: 2%;
+        padding-left: 0%;
+        display: flex;
+        /* background-color: palevioletred; */
+    }
+
+    .clip-1 {
+        width: 100%;
+        padding: 10%;
+    }
+
+</style>
+
+
+<!-- flex 5 components -->
+<style>
+    .flex-container-5 {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        height: 1000px;
+        /* background: linear-gradient(0deg, #ffffff 70%, #c7c7bb 10%); */
+    }
+
+</style>
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 500px;
+        height: 400px;
+        padding: 2%;
+        border-radius: 20px;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    img {
+        /* border-radius: 20px 20px 0 0; */
+        padding: 2%;
+    }
+
+    .container {
+        padding: 2px 16px;
+    }
+</style>
+
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark"
+        style="box-shadow:10px 10px 20px rgba(0, 0, 0, 0.2); position: fixed; width: 100%; background-color:rgba(0, 0, 0, 0.5);">
+        <a class="navbar-brand" style="font-weight:300; color: white;">Warissara's | </a>
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -54,22 +261,38 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style="scroll-behavior: smooth;" href="#education">EduKtion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="scroll-behavior: smooth;" href="#experience">Xperience</a>
+                </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li> -->
-                <li class="nav-item">
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="https://linkedin.com/in/warissarac">LinkedIn<span
                             class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://linkedin.com/in/warissarac">LinkedIn</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/mywarissara/">GitHub<span
-                            class="sr-only">(current)</span></a>
+                    <a class="nav-link" target="_blank" href="https://github.com/mywarissara/">GitHub</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="https://drive.google.com/file/d/1bu5sq1VkmB4rnT62xmHO2y4AD69QelkI/view?usp=sharing">Resume<span
-                            class="sr-only">(current)</span></a>
+                    <a class="nav-link" target="_blank" href="/warissara_resume_transcript.pdf">Resume</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="/warissara_resume_transcript.pdf">Transcript</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="mailto: c.warissara@outlook.com">Contact</a>
+                </li>
+
             </ul>
         </div>
     </nav>
@@ -85,54 +308,64 @@
     <title>Me Warissara!</title>
 
 
-</head>
+</header>
 
 <body>
-    <div class="flex-container-1" style='background-color:white'>
-        <img class="img" src="img/working.jpg">
+
+    <!-- header image -->
+    <div class="flex-container-1">
+        <!-- <img class="img" src="img/background.jpg"> -->
+
+        <img class="img-head" src="img/head.png">
     </div>
 
-    <div class="flex-container-2" style='background-color:black'>
-        <div class='home-page-1' style='background-color:white'>
+    <!-- about me -->
+    <div class="flex-container-2">
+        <div class='home-page-1'>
             <div class="home-page-column-1">
                 <span style="font-weight: bold; font-size:xx-large;">About</span>
                 <ul>
-                    <span style="font-weight:300; font-size:medium; font-style: oblique;">A Robotics and Artificial
+                    <span style="font-weight:500; font-size:x-large; font-style: oblique;">Warissara Chawalitsoonthorn
+                        (Ms.)</span>
+                </ul>
+                <ul>
+                    <span style="font-weight:300; font-size:medium; font-style:oblique;">A Robotics and Artificial
                         Intelligent
                         Engineering Student</span>
                 </ul>
                 <ul>
-                    <span style="font-weight:100; font-size:medium; ">
-                        Developer, Robotics, AI, Entrepreneurs are my major of study. I am familiar with solving
-                        real-world problems. I am working on software development to control the AIV (Automated
-                        Intelligence Vehicle) or any mobile robot using a software tool: ROS (Robotics Operating
-                        System), which is integrated with computer vision technology. Therefore, I am familiar with
-                        robot software, machine learning, and web development.
-                        The programming language that I use is Python, C, Javascript, HTML5, CSS, and Linux Command.
+                    <span style="font-weight:200; font-size:medium; ">
+                        Developer, Robotics, AI, Entrepreneurs are my major of study. I am using the Data analysis to
+                        explain the problem and try to find the solution for real-world cases.
+                        I have been developing the robotics solution, AIV (Automated Intelligence Vehicle),
+                        to use in industrial 5.0. And I am working on image processing analysis using AI (Artificial
+                        Intelligence) to improve my skills against the world technology disruption.
+                        <br>
+                        <br>
+                        The programming language that I use is Python, Javascript, HTML5, CSS, and Linux Command.
                         Moreover, I have experienced a lot of start-up competitions, where sharpen my skills in both
                         technology and business development.
                     </span>
                 </ul>
                 <ul>
-                    <span style="font-weight:100; font-size:medium;">
-                        I lead my team as project engineer at AIMS Lab. We are working on solving the problem and
-                        requirement from the clients such as, PTT Digital. And conclude to manage our team,
-                        collaborating by the agile process
+                    <span style="font-weight:200; font-size:medium;">
+                        I lead my team as a project engineer at AIMS Lab. We are working on solving the problem and
+                        requirements from the clients such as PTT Digital. And conclude to manage our team,
+                        collaborating by the agile process. My experiences are varied, I love to explore something new
+                        in the banking industry, automation, and business.
                     </span>
                 </ul>
 
             </div>
         </div>
-        <div class='home-page-1' style='background-color:white'>
+        <div class='home-page-1'>
             <div class="home-page-column-1">
                 <ul>
-                    <img class="img  w3-animate-fading" src="img/logo.png">
+                    <img class="img-logo" src="img/logo.png">
                 </ul>
                 <ul>
                     <span style="font-weight: bold; font-size:xx-large;"> Robotics and AI Engineer </span>
-                    <span style="font-weight:100; font-size:medium;">
 
-                    </span>
                 </ul>
                 <ul>
                     <span style="font-weight:200; font-size:large;">
@@ -162,38 +395,74 @@
         </div>
     </div>
 
-    <div class="flex-container-2" style='background-color:whitesmoke'>
-        <div class="edu-1" style="background-color: white;">
-            <span style="font-weight: bold; font-size:xx-large;"> Education </span>
-            <p>
-            <span style="font-weight:300; font-size:large;">
-                    King Mongkut's Institute Of Technology Ladkrabang
-                    <br style="font-weight:100;"> 2018 - Present </br>
-                    <li style="font-weight:100; font-size:medium;">Bachelor of Engineering (B.Eng.), Major in Robotics and AI	</li>
-                    <li style="font-weight:100; font-size:medium;">Accumulate GPA:  3.84/4.00</li>
-                    <li style="font-weight:100; font-size:medium;">Relevant Coursework: Robotics Software Development, Entrepreneurship, Programming Language 
-                        (C, Python, HTML5/CSS3, JavaScript)
-                        
+    <!-- education -->
+    <div class="flex-container-3">
+        <div class="edu-1" id="education">
+            <div class="edu-1-inner">
+                <span style="font-weight: bold; font-size:xx-large;"> Education </span>
+                <p>
+                    <span style="font-weight:300; font-size:large;">
+                        King Mongkut's Institute Of Technology Ladkrabang
+                        <br style="font-weight:200; font-size:small; font-style: oblique;"> 2018 - Present </br>
+                        <li style="font-weight:200; font-size:medium;">Bachelor of Engineering (B.Eng.), Major in
+                            Robotics and AI </li>
+                        <li style="font-weight:200; font-size:medium;">Accumulate GPA: 3.84/4.00</li>
+                        <li style="font-weight:200; font-size:medium;">Relevant Coursework: Robotics Software
+                            Development, Entrepreneurship </li>
+                        <li style="font-weight:200; font-size:medium;">Programming Language(C, Python, HTML5/CSS3,
+                            JavaScript)
                         </li>
-            </span>
-            </p>
-            <p>
-            <span style="font-weight:300; font-size:large;">
-                Saint Joseph Convent School (English Program)
-                <br style="font-weight:100;"> 2016 - 2018 </br>
-                <li style="font-weight:100; font-size:medium;">High School Diploma, Science and Mathematics</li>
-                <li style="font-weight:100; font-size:medium;">Overall GPA:  3.80/4.00	</li>
-                <li style="font-weight:100; font-size:medium;">Student Council, Chess Club, Public Speaking Club
-                    
-                    </li>
-        </span>
-        </p>
+                    </span>
+                </p>
+                <p>
+                    <span style="font-weight:300; font-size:large;">
+                        Saint Joseph Convent School (English Program)
+                        <br style="font-weight:200;font-size:small; font-style: oblique;"> 2016 - 2018 </br>
+                        <li style="font-weight:200; font-size:medium;">High School Diploma, Science and Mathematics</li>
+                        <li style="font-weight:200; font-size:medium;">Overall GPA: 3.80/4.00 </li>
+                        <li style="font-weight:200; font-size:medium;">Student Council, Chess Club, Public Speaking Club
+                        </li>
+                    </span>
+                </p>
+            </div>
         </div>
-        <div class="edu-2" style="background-color: rgba(255, 255, 255, 0.3)">
-            <span style="font-weight: bold; font-size:xx-large;"> Education </span>
-
+        <div class="edu-2">
+            <div class="edu-2-inner">
+                <img class="img-logo-kmitl" src="img/kmitl.png">
+            </div>
+            <br>
+            <div class="edu-2-inner-2">
+                <img class="img-logo-sjc" src="img/sjc.png">
+            </div>
         </div>
     </div>
+
+    <!-- experience -->
+    <div class="flex-container-4">
+        <div class="ex-1">
+            <div class="clip-1" id="experience">
+                <span style="font-weight: bold; font-size:xx-large;"> Experience </span>
+                <p></p>
+                    <!-- <iframe width="480" height="315" src="https://www.youtube.com/embed/mk1dFighVgg" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe> -->
+                        <div class="card">
+                            <iframe width="460" height="315" src="https://www.youtube.com/embed/mk1dFighVgg" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                            <!-- <img src="img/working1.jpg"  alt="Avatar" style="width:60%"> -->
+                            <div class="container">
+                              <h4><b>Jane Doe</b></h4> 
+                              <p>Interior Designer</p> 
+                            </div>
+                          </div>
+                <p>
+                </p>
+            </div>
+        </div>
+        
+    </div>
+
 </body>
 
 </html>
