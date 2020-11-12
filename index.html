@@ -5,6 +5,11 @@
 <!-- layout container -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script>
     $(document).ready(function () {
         // Add smooth scrolling to all links
@@ -32,24 +37,98 @@
     });
 </script>
 
+
+<!-- slide -->
 <script>
-    // Automatic Slideshow - change image every 3 seconds
-    var myIndex = 0;
-    carousel();
-
-    function carousel() {
+    var slideIndex1 = 0;
+    var slideIndex2 = 0;
+    let count = 0;
+    carousel1();
+    carousel2();
+    carousel3();
+    function carousel1() {
         var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        myIndex++;
-        if (myIndex > x.length) { myIndex = 1 }
-        x[myIndex - 1].style.display = "block";
-        setTimeout(carousel, 3000);
-    }
-</script>
 
+        var slides = document.getElementsByClassName("mySlides1");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex1++;
+        if (slideIndex1 > slides.length) { slideIndex1 = 1 }
+        try {
+            slides[slideIndex1 - 1].style.display = "block";
+        }
+        catch {
+        }
+        count == 0 ? setTimeout(carousel1, 2) : setTimeout(carousel1, 5000);
+        count = 1;
+        // console.log(count)
+    }
+
+    function carousel2() {
+        var j;
+
+        var slides = document.getElementsByClassName("mySlides2");
+        for (j = 0; j < slides.length; j++) {
+            slides[j].style.display = "none";
+        }
+        slideIndex2++;
+        if (slideIndex2 > slides.length) { slideIndex2 = 1 }
+        try {
+            slides[slideIndex2 - 1].style.display = "block";
+        }
+        catch {
+        }
+        count == 0 ? setTimeout(carousel2, 2) : setTimeout(carousel2, 5000);
+        console.log(slides.length)
+
+        count = 1;
+    }
+
+    var slideIndex3 = 0;
+    function carousel3() {
+        var j;
+
+        var slides = document.getElementsByClassName("mySlides3");
+        for (j = 0; j < slides.length; j++) {
+            slides[j].style.display = "none";
+        }
+        slideIndex3++;
+        if (slideIndex3 > slides.length) { slideIndex3 = 1 }
+        try {
+            slides[slideIndex3 - 1].style.display = "block";
+        }
+        catch {
+        }
+        count == 0 ? setTimeout(carousel3, 2) : setTimeout(carousel3, 5000);
+        console.log(slides.length)
+
+        count = 1;
+    }
+
+    carousel4();
+    var slideIndex4 = 0;
+    function carousel4() {
+        var j;
+
+        var slides = document.getElementsByClassName("mySlides4");
+        for (j = 0; j < slides.length; j++) {
+            slides[j].style.display = "none";
+        }
+        slideIndex4++;
+        if (slideIndex4 > slides.length) { slideIndex4 = 1 }
+        try {
+            slides[slideIndex4 - 1].style.display = "block";
+        }
+        catch {
+        }
+        count == 0 ? setTimeout(carousel4, 2) : setTimeout(carousel4, 5000);
+        console.log(slides.length)
+
+        count = 1;
+    }
+
+</script>
 
 <style>
     body {
@@ -73,8 +152,9 @@
         display: flex;
         flex-flow: row wrap;
         width: 100%;
-        height: 400px;
+        height: 600px;
         overflow: hidden;
+        background-image: url(img/pitching-ctw.JPG);
         /* background: linear-gradient(0deg, #ffffff 40%, #d4bab0 20%); */
     }
 
@@ -90,6 +170,7 @@
         flex-flow: row wrap;
         width: 100%;
         height: 600px;
+        background-color: #eeeeee;
         /* background: linear-gradient(55deg, #ffffff 40%, #d4bab0 80%); */
     }
 
@@ -151,14 +232,13 @@
     }
 
     .img-head {
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
         position: absolute;
         margin-top: 5%;
         margin-left: 40%;
-        -webkit-filter: drop-shadow(5px 5px 5px #000000);
-        filter: drop-shadow(5px 5px 10px #888888);
-
+        /* -webkit-filter: drop-shadow(5px 5px 5px #000000);
+        filter: drop-shadow(5px 5px 10px #888888); */
     }
 
     .img-logo {
@@ -169,16 +249,22 @@
 
     .img-logo-sjc {
         width: 35%;
+        -webkit-filter: drop-shadow(5px 5px 2px #bebebe);
+        filter: drop-shadow(5px 5px 10px #bebebe);
     }
 
     .img-logo-kmitl {
         width: 75%;
         overflow: hidden;
+        -webkit-filter: drop-shadow(5px 2px 2px #bebebe);
+        filter: drop-shadow(2px 5px 5px #bebebe);
     }
 
     .img-50-bg {
         width: 100%;
         padding: 10%;
+        -webkit-filter: drop-shadow(5px 5px 5px #000000);
+        filter: drop-shadow(5px 5px 10px #888888);
     }
 
     .home-page-column-1 {
@@ -193,65 +279,143 @@
         display: flex;
         flex-flow: row wrap;
         width: 100%;
-        height: 700px;
+        height: 800px;
         /* background: linear-gradient(0deg, #ffffff 70%, #c7c7bb 10%); */
     }
 
     .ex-1 {
         width: 100%;
-        padding-top: 2%;
-        padding-left: 0%;
         display: flex;
         /* background-color: palevioletred; */
     }
 
     .clip-1 {
         width: 100%;
-        padding: 10%;
+        display: flex;
+        padding-top: 10%;
+        /* background-color: aquamarine; */
     }
 </style>
 
+<!-- flex 6 components -->
+<style>
+    .flex-container-6 {
+        display: flex;
+        flex-flow: row wrap;
+        width: 1400px;
+        height: 500px;
+        padding-left: 100px;
+        overflow: hidden;
+    }
+</style>
 
-<!-- flex 5 components -->
 <style>
     .flex-container-5 {
         display: flex;
         flex-flow: row wrap;
         width: 100%;
-        height: 1000px;
-        /* background: linear-gradient(0deg, #ffffff 70%, #c7c7bb 10%); */
+        height: 700px;
+        padding: 2%;
+        overflow: hidden;
+        /* background:  black; */
+    }
+
+    .card-custom {
+        width: 400px;
+        height: 600px;
+        border-radius: 30px;
+        padding-top: 30px;
+        padding-left: 20px;
+        margin-right: 60px;
+        margin-bottom: 50px;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+
+    }
+
+    .card-custom:hover {
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
     }
 </style>
 
+<!-- slide -->
 <style>
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        width: 500px;
-        height: 400px;
-        padding: 2%;
-        border-radius: 20px;
+    .mySlides {
+        display: none;
     }
 
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
     }
 
-    img {
-        /* border-radius: 20px 20px 0 0; */
-        padding: 2%;
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
     }
 
-    .container {
-        padding: 2px 16px;
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 5.0s;
+        animation-name: fade;
+        animation-duration: 5.0s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .2
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .2
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .text {
+            font-size: 11px
+        }
     }
 </style>
 
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark"
-        style="box-shadow:10px 10px 20px rgba(0, 0, 0, 0.2); position: fixed; width: 100%; background-color:rgba(0, 0, 0, 0.5);">
-        <a class="navbar-brand" style="font-weight:300; color: white;">Warissara's | </a>
+    <nav class="navbar navbar-expand-lg navbar-light"
+        style="box-shadow:10px 10px 20px rgba(0, 0, 0, 0.3); z-index: 9; position: fixed; width: 100%; background-color:rgba(255, 255, 255, 0.9);">
+        <a class="navbar-brand" style="font-weight:300; color: black;">Warissara's | </a>
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -260,10 +424,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" style="scroll-behavior: smooth;" href="#education">EduKtion</a>
+                    <a class="nav-link" style="scroll-behavior: smooth;" href="#education">Education</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="scroll-behavior: smooth;" href="#experience">Xperience</a>
+                    <a class="nav-link" style="scroll-behavior: smooth;" href="#project">Project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="scroll-behavior: smooth;" href="#exp">Experience</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -285,10 +452,10 @@
                     <a class="nav-link" target="_blank" href="/warissara_resume_transcript.pdf">Resume</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="/warissara_resume_transcript.pdf">Transcript</a>
+                    <a class="nav-link" target="_blank" href="/grade.pdf">Transcript</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="mailto: c.warissara@outlook.com">Contact</a>
+                    <a class="nav-link" target="_blank" href="mailto: c.warissara@outlook.com">Mail</a>
                 </li>
 
             </ul>
@@ -333,12 +500,13 @@
                 </ul>
                 <ul>
                     <span style="font-weight:200; font-size:medium; ">
-                        Developer, Robotics, AI, Entrepreneurs are my major of study. I am using the Data analysis to
+                        Developer, Robotics, AI, Entrepreneurs are my major of study. I am using the Data science to
                         explain the problem and try to find the solution for real-world cases.
                         I have been developing the robotics solution, AIV (Automated Intelligence Vehicle),
-                        to use in industrial 5.0. And I am working on image processing analysis using AI (Artificial
-                        Intelligence) to improve my skills against the world technology disruption.
+                        to use in industrial 5.0. I want to be the AI specialist with high leadership skill to enhance
+                        the productivity and efficiency of team.
                         <br>
+
                         <br>
                         The programming language that I use is Python, Javascript, HTML5, CSS, and Linux Command.
                         Moreover, I have experienced a lot of start-up competitions, where sharpen my skills in both
@@ -381,7 +549,7 @@
                         </li>
 
                         <li>
-                            Problem solving
+                            Banking Industry
                         </li>
                         <li>
                             Business Interest
@@ -435,34 +603,209 @@
         </div>
     </div>
 
-    <!-- experience -->
-    <div class="flex-container-4">
-        <div class="ex-1">
-            <div class="clip-1" id="experience">
-                <span style="font-weight: bold; font-size:xx-large;"> Experience </span>
-                <p></p>
-                <!-- <iframe width="480" height="315" src="https://www.youtube.com/embed/mk1dFighVgg" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe> -->
-                <div class="card">
-                    <iframe width="460" height="315" src="https://www.youtube.com/embed/mk1dFighVgg" frameborder="0"
+
+    <div class="flex-container-5" id="project">
+
+
+        <div class="card card-custom" style="border-radius: 20px; background-color:#fff">
+            <!-- <img class="card-img-top" src="img/ex1.JPG" alt="Card image" style="width:95%"> -->
+            <div class=" slideshow-container">
+                <div class="mySlides1 fade">
+                    <img class="card-img-top" src="img/ex1.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <div class="mySlides1 fade">
+                    <img class="card-img-top" src="img/ex1.2.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <div class="mySlides1 fade">
+                    <img class="card-img-top" src="img/ex1.3.png" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <!-- <div class="mySlides1 fade">
+                    <iframe width="350" height="230" src="https://www.youtube.com/embed/mk1dFighVgg" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
-                    <!-- <img src="img/working1.jpg"  alt="Avatar" style="width:60%"> -->
-                    <div class="container">
-                        <h4><b>Smart City Week Hackathon 2020</b></h4>
-                        <p>The Winner | Solution for Slum</p>
-                        <p>United Nations, KRIS, 4Regions Slum Network</p>
-                    </div>
+                </div> -->
+                <div class="card-body">
+                    <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Smart City Week Hackathon
+                            2020</span></h5>
+                    <p class="card-text"> <span style="font-weight:400; font-size:medium; ">The Winner | The Best
+                            Solution
+                            for Slum</span>
+                        <span style="font-weight:200; font-size:small; ">
+                            <br>Organized by United Nations, KRIS, 4 Regions Slum Network
+                            <br> We innovated the Kiosk for helping slums to access their right from government, finding
+                            jobs, and report the
+                            problem in their society. We have discussed with people there and they have to fight a lot
+                            with
+                            injustice so
+                            that we will make their voice out loud. Every sound is matter.</span>
+                    </p>
+                    <a class="btn btn-outline-secondary" target="_blank"
+                        href="https://www.youtube.com/embed/mk1dFighVgg">See
+                        more</a>
                 </div>
-                <p>
-                </p>
             </div>
         </div>
 
+        <div class="card card-custom" style="border-radius: 20px; background-color:#fff;">
+            <!-- <img class="card-img-top" src="img/ex1.JPG" alt="Card image" style="width:95%"> -->
+            <div class=" slideshow-container">
+                <div class="mySlides2 fade">
+                    <img class="card-img-top" src="img/ex2.1.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <div class="mySlides2 fade">
+                    <img class="card-img-top" src="img/ex2.2.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <div class="mySlides2 fade">
+                    <img class="card-img-top" src="img/ex2.3.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <div class="mySlides2 fade">
+                    <img class="card-img-top" src="img/ex2.4.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <div class="mySlides2 fade">
+                    <img class="card-img-top" src="img/ex2.5.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <!-- <div class="mySlides fade">
+                    <iframe width="350" height="230" src="https://youtu.be/NgVmCw9M3T0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div> -->
+                <div class="card-body">
+                    <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Delta’s Cup Competition
+                            2019 </span></h5>
+                    <p class="card-text"> <span style="font-weight:400; font-size:medium; ">1st prize Delta’s Cup
+                            Competition Thailand
+                            <br> 3rd prize Delta’s World Cup Competition @ Jiangsu, China</span>
+                        <span style="font-weight:200; font-size:small; ">
+                            <br>Organized by Delta Electronics PCL. Jiangsu, China.
+                            <br> Design and develop the Augmented Reality(AR) project for industry solving the 4.0
+                            industrial problem using Industrial Internet of Things(IIoT) – functions to observe and
+                            monitor the robot or machine.</span>
+                    </p>
+                    <a class="btn btn-outline-secondary" target="_blank" href="https://youtu.be/NgVmCw9M3T0">See
+                        more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-custom" style="border-radius: 20px; background-color:#fff;">
+            <!-- <img class="card-img-top" src="img/ex1.JPG" alt="Card image" style="width:95%"> -->
+            <div class=" slideshow-container">
+                <div class="mySlides3 fade">
+                    <img class="card-img-top" src="img/ex3.1.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <div class="mySlides3 fade">
+                    <img class="card-img-top" src="img/ex3.2.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <div class="mySlides3 fade">
+                    <img class="card-img-top" src="img/ex3.3.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">International Seminar on
+                            Technology for sustainability 2018 </span></h5>
+                    <p class="card-text"> <span style="font-weight:400; font-size:medium; ">1st prize for the Best
+                            Amazon Web Services Granted by Amazon
+                            <br>1st prize for the Best Sustainability Award (2018) granted by Kumamoto National
+                            Institute of Technology</span>
+                        <span style="font-weight:200; font-size:small; ">
+                            <br>Organized by Amazon Web Services, Krungthai Bank, PTT Digital Solutions.
+                            Innovate idea to help people and society recover after the disaster –
+                            Donation Platform.
+                        </span>
+                    </p>
+                    <a class="btn btn-outline-secondary" target="_blank" href="https://youtu.be/c0cVRboMh7g">See
+                        more</a>
+                </div>
+            </div>
+        </div>
     </div>
 
 
+    <div class="flex-container-5">
+
+        <div class="card card-custom" style="border-radius: 20px; background-color:#fff;">
+            <!-- <img class="card-img-top" src="img/ex1.JPG" alt="Card image" style="width:95%"> -->
+            <div class=" slideshow-container">
+                <div>
+                    <img class="card-img-top" src="img/ex4.1.JPG" alt="Card image" style="width:95%; height:230px;">
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Youth representative of
+                            United nations </span></h5>
+                    <p class="card-text"> <span style="font-weight:400; font-size:medium; ">Guest Speaker at UN75
+                            Special Exhibit 2020 at Central World, Bangkok, Thailand.
+                        </span>
+                        <span style="font-weight:200; font-size:small; ">
+                            <br>Big interest in supporting housing and accessibility for Thai people
+
+                        </span>
+                    </p>
+                    <a class="btn btn-outline-secondary" target="_blank" href="https://youtu.be/dvte1XuAmF8">See
+                        more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-custom" style="border-radius: 20px; background-color:#fff;">
+            <!-- <img class="card-img-top" src="img/ex1.JPG" alt="Card image" style="width:95%"> -->
+            <div class=" slideshow-container" style="padding-top: 10%;">
+                <iframe width="330 " height="230" src="https://www.youtube.com/embed/G7fv-5RcH-M" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <!-- <img class="card-img-top" src="img/ex4.1.JPG" alt="Card image" style="width:95%; height:230px;"> -->
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Automatics Endurance Test for
+                        Ventilator</span></h5>
+                <p class="card-text"> <span style="font-weight:400; font-size:medium; ">Computer Vision and Image
+                        Processing project at Robotics and AI Engineering, KMITL
+                    </span>
+                    <span style="font-weight:200; font-size:small; ">
+                        <br> Due to COVID-19, I am doing the project to help testing the ventilator pumping for KMITL
+                        Ventilator. It will be used in hospital that do not have enough equipment to take care of
+                        patient.
+                    </span>
+                </p>
+                <a class="btn btn-outline-secondary" target="_blank" href="https://youtu.be/pcUvXyqLyjU">See
+                    more</a>
+            </div>
+        </div>
+
+        <div class="card card-custom" style="border-radius: 20px; background-color:#fff;">
+            <!-- <img class="card-img-top" src="img/ex1.JPG" alt="Card image" style="width:95%"> -->
+            <div class=" slideshow-container" style="padding-top: 10%;">
+                <iframe width="330" height="230" src="https://www.youtube.com/embed/Cl5m3CVQYoU" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <!-- <img class="card-img-top" src="img/ex4.1.JPG" alt="Card image" style="width:95%; height:230px;"> -->
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Voice assistance platform with
+                        Line
+                        project </span></h5>
+                <p class="card-text"> <span style="font-weight:400; font-size:medium; "> at Robotics and AI Engineering,
+                        KMITL
+                    </span>
+                    <span style="font-weight:200; font-size:small; ">
+                        <br>
+                        Develop the chat box on website and connect to Line platform using Google Dialogflow.
+                        <br>Related technology: Django, Python, JavaScript, HTML5, CSS3, Line
+                    </span>
+                </p>
+                <a class="btn btn-outline-secondary" target="_blank" href="https://youtu.be/Cl5m3CVQYoU">See
+                    more</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="flex-container-6" id="exp">
+        <span style="font-weight:400; font-size:large; ">Project and Competition Experience With</span>
+        <img style="height: 450px; width: 1200px;" src="img/logo-pro.png">
+
+    </div>
 </body>
 
 </html>
