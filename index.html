@@ -8,6 +8,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script>
@@ -154,15 +157,14 @@
         width: 100%;
         height: 600px;
         overflow: hidden;
-        background-image: url(img/pitching-ctw.JPG);
         /* background: linear-gradient(0deg, #ffffff 40%, #d4bab0 20%); */
     }
 
     .flex-container-2 {
         display: flex;
+        padding-bottom: 5%;
         flex-flow: row wrap;
         width: 100%;
-        height: 700px;
     }
 
     .flex-container-3 {
@@ -184,14 +186,13 @@
         padding-top: 5%;
         padding-left: 5%;
         display: flex;
-
-        /* background-color: palevioletred; */
     }
 
     .edu-1-inner {
         width: 100%;
         padding: 5%;
         overflow: auto;
+
         /* background-color:white; */
         /* border-radius: 50px;
         box-shadow:10px 10px 10px rgba(0, 0, 0, 0.3); */
@@ -229,6 +230,8 @@
 
     .img {
         width: 100%;
+        height: 700px;
+        object-fit: fill;
     }
 
     .img-head {
@@ -260,13 +263,6 @@
         filter: drop-shadow(2px 5px 5px #bebebe);
     }
 
-    .img-50-bg {
-        width: 100%;
-        padding: 10%;
-        -webkit-filter: drop-shadow(5px 5px 5px #000000);
-        filter: drop-shadow(5px 5px 10px #888888);
-    }
-
     .home-page-column-1 {
         padding-left: 15%;
         padding-right: 15%;
@@ -279,7 +275,7 @@
         display: flex;
         flex-flow: row wrap;
         width: 100%;
-        height: 800px;
+        /* height: 800px; */
         /* background: linear-gradient(0deg, #ffffff 70%, #c7c7bb 10%); */
     }
 
@@ -303,20 +299,49 @@
         display: flex;
         flex-flow: row wrap;
         width: 1400px;
-        height: 500px;
         padding-left: 100px;
         overflow: hidden;
+    }
+
+    .exp-name {
+        width: 100%;
+        display: flex;
+        padding-top: 5%;
+        padding-left: 5%;
+    }
+
+    .exp-inner-1 {
+        width: 50%;
+        padding: 1%;
+    }
+
+    .exp-inner-2 {
+        width: 50%;
+        padding: 1%;
+    }
+
+    .exp-logo {
+        width: 300px;
+        height: 300px;
+    }
+
+    .acn-box {
+        width: 100%;
+        padding: 2%;
     }
 </style>
 
 <style>
     .flex-container-5 {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: wrap;
         width: 100%;
-        height: 700px;
+        /* height: 700px; */
         padding: 2%;
+        padding-bottom: 5%;
+        padding-top: 10%;
         overflow: hidden;
+        justify-content: space-between;
         /* background:  black; */
     }
 
@@ -411,7 +436,66 @@
     }
 </style>
 
+<!-- fade in -->
+<style>
+    .fade-in {
+        animation: fadeIn ease 10s;
+        -webkit-animation: fadeIn ease 10s;
+        -moz-animation: fadeIn ease 10s;
+        -o-animation: fadeIn ease 10s;
+        -ms-animation: fadeIn ease 10s;
+    }
 
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-moz-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-o-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-ms-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light"
         style="box-shadow:10px 10px 20px rgba(0, 0, 0, 0.3); z-index: 9; position: fixed; width: 100%; background-color:rgba(255, 255, 255, 0.9);">
@@ -427,10 +511,13 @@
                     <a class="nav-link" style="scroll-behavior: smooth;" href="#education">Education</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" style="scroll-behavior: smooth;" href="#exp">Experience</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" style="scroll-behavior: smooth;" href="#project">Project</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="scroll-behavior: smooth;" href="#exp">Experience</a>
+                    <a class="nav-link" style="scroll-behavior: smooth;" href="#contact">Contact</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -455,7 +542,7 @@
                     <a class="nav-link" target="_blank" href="/grade.pdf">Transcript</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="mailto: c.warissara@outlook.com">Mail</a>
+                    <a class="nav-link" target="_blank" href="mailto: c.warissara@outlook.com">E-Mail</a>
                 </li>
 
             </ul>
@@ -479,13 +566,14 @@
 
     <!-- header image -->
     <div class="flex-container-1">
-        <!-- <img class="img" src="img/background.jpg"> -->
+        <img class="img" style="object-fit: contain;" src="img/profile.jpg">
 
-        <img class="img-head" src="img/head.png">
+        <!-- <img class="img-head" src="img/head.png"> -->
+
     </div>
 
     <!-- about me -->
-    <div class="flex-container-2">
+    <div class="flex-container-2 ">
         <div class='home-page-1'>
             <div class="home-page-column-1">
                 <span style="font-weight: bold; font-size:xx-large;">About</span>
@@ -500,11 +588,15 @@
                 </ul>
                 <ul>
                     <span style="font-weight:200; font-size:medium; ">
-                        Developer, Robotics, AI, Entrepreneurs are my major of study. I am using the Data science to
-                        explain the problem and try to find the solution for real-world cases.
-                        I have been developing the robotics solution, AIV (Automated Intelligence Vehicle),
-                        to use in industrial 5.0. I want to be the AI specialist with high leadership skill to enhance
-                        the productivity and efficiency of team.
+                        Developer, Robotics, AI, Entrepreneurs are my major of study. I am using Data science to explain
+                        the problem and try to find the solution for real-world cases. I have been developing the
+                        robotics solution, AIV (Automated Intelligence Vehicle). And the facial emotion analysis by
+                        using AI data science.
+                        I want to be an AI specialist with high leadership skill to enhance the productivity and
+                        efficiency of the
+                        team.
+
+
                         <br>
 
                         <br>
@@ -515,11 +607,9 @@
                 </ul>
                 <ul>
                     <span style="font-weight:200; font-size:medium;">
-                        I lead my team as a project engineer at AIMS Lab. We are working on solving the problem and
-                        requirements from the clients such as PTT Digital. And conclude to manage our team,
-                        collaborating by the agile process. My experiences are varied, I love to explore something new
-                        in the banking industry, automation, and business.
-                    </span>
+                        I am an adaptive, high confident, and enthusiastic person, so I can work with pressure very
+                        well. I am capable of managing things to meet the goal. My co-workers and my colleagues claim
+                        that management and planning are my outstanding other than technology skills.</span>
                 </ul>
 
             </div>
@@ -562,7 +652,7 @@
     </div>
 
     <!-- education -->
-    <div class="flex-container-3">
+    <div class="flex-container-3 fade-in">
         <div class="edu-1" id="education">
             <div class="edu-1-inner">
                 <span style="font-weight: bold; font-size:xx-large;"> Education </span>
@@ -572,11 +662,11 @@
                         <br style="font-weight:200; font-size:small; font-style: oblique;"> 2018 - Present </br>
                         <li style="font-weight:200; font-size:medium;">Bachelor of Engineering (B.Eng.), Major in
                             Robotics and AI </li>
-                        <li style="font-weight:200; font-size:medium;">Accumulate GPA: 3.84/4.00</li>
-                        <li style="font-weight:200; font-size:medium;">Relevant Coursework: Robotics Software
-                            Development, Entrepreneurship </li>
-                        <li style="font-weight:200; font-size:medium;">Programming Language(C, Python, HTML5/CSS3,
-                            JavaScript)
+                        <li style="font-weight:200; font-size:medium;">Accumulate <b>GPA: 3.84/4.00</b></li>
+                        <li style="font-weight:200; font-size:medium;"> <b>Relevant Coursework:</b><u> Robotics Software
+                                Development, Entrepreneurship </u></li>
+                        <li style="font-weight:200; font-size:medium;">Programming Language <u>C, Python, HTML5/CSS3,
+                                JavaScript, Linux</u>
                         </li>
                     </span>
                 </p>
@@ -603,8 +693,115 @@
         </div>
     </div>
 
+    <div class="flex-container-6 fade-in" id="exp">
+        <div class="exp-name">
+            <span style="font-weight:bold; font-size:xx-large; ">Experience</span>
+        </div>
 
-    <div class="flex-container-5" id="project">
+        <div class="exp-inner-1">
+            <div class="exp-logo">
+                <img style="object-fit: contain; width: 400px;" src="img/accenture-logo.png">
+            </div>
+        </div>
+        <div class="exp-inner-2">
+            <div class="acn-box">
+                <span style="font-weight:500; font-size: large;">Deployment Consultant Intern</span><br>
+                <span style="font-weight:normal; font-size: medium;">Accenture Solutions Co.,Ltd</span>
+                <br><i> Jun 2020 – Aug 2020 Bangkok, Thailand </i><br>
+                <span style="font-weight:200; font-size:medium;">
+                    <li>Deployment process and making a testing plan for tester to check the performance of product.
+                    </li>
+                    <li>Plan the testing scenario for User Acceptance Test(UAT) and Performance Verification Test(PVT)
+                    </li>
+                    <b>Relevant technology:</b><u> Microsoft Excel, Banking Industry</u>
+                </span>
+            </div>
+        </div>
+
+        <div class="exp-inner-1">
+            <div class="exp-logo">
+                <img style="object-fit: contain; width: 350px; padding-left: 10%;" src="img/voniq.png">
+            </div>
+        </div>
+        <div class="exp-inner-2">
+            <div class="acn-box">
+                <span style="font-weight:500; font-size: large;">Founder </span><br>
+                <span style="font-weight:normal; font-size: medium;">VONIQ </span>
+                <br><i> Jun 2020 – Present Bangkok, Thailand </i><br>
+                <span style="font-weight:200; font-size:medium;">
+                    <li>Funded by NIA (National Innovation Agency Thailand)
+                    </li>
+                    <li>The Winner of Youth Start-up Fund 2020 Batch 1
+                    </li>
+                    <li>
+                        Pre employment platform for interview, test, and offer the job for applicant. Using data
+                        analysis to classify the
+                        personality of candidates and match the need for both HR and individual.
+                    </li>
+                    <b>Relevant technology:</b><u> Recruitment, Web Development</u><br>
+                    <b>Responsibility:</b><i> Founder, CEO</i>
+
+                </span>
+            </div>
+        </div>
+        <div class="exp-inner-1">
+            <div class="exp-logo">
+                <!-- <img style="object-fit: contain; width: 400px;" src="img/accenture-logo.png"> -->
+                <iframe width="460" height="300" src="https://www.youtube.com/embed/G0SRetfUW9w" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="exp-inner-2">
+            <div class="acn-box">
+                <span style="font-weight:500; font-size: large;">Mobile Robot Developer | R&D</span><br>
+                <span style="font-weight:normal; font-size: medium;">King Mongkut’s Institute of Technology
+                    Ladkrabang</span>
+                <br><i> Jun 2020 – Present Bangkok, Thailand </i><br>
+                <span style="font-weight:200; font-size:medium;">
+                    <li>Collaborate with Dr. Poom Konghuayrob and 3 robotics students as a team. To develop the control
+                        platform for non- programable users, which I mainly focus on developing the mobile robot module.
+                        To control and program the robot(AIV) remotely and generate the map with auto guiding function
+                        to move to the specific point in a real-world environment. We work on scrum and agile process.
+                    </li>
+                    <b>Relevant technology:</b><u> ROS, Linux, JavaScript, HTML5/CSS3, Python</u><br>
+                    <b>Responsibility:</b><i> co-Developer, ROS Developer, Web Developer, Presentation</i>
+
+                </span>
+            </div>
+
+        </div>
+        <div class="exp-inner-1">
+            <div class="exp-logo">
+                <!-- <img style="object-fit: contain; width: 350px; padding-left: 10%;" src="img/voniq.png"> -->
+                <div style="width: 450px; height: 400px;" class="fb-post"
+                    data-href="https://www.facebook.com/WizardLibrary/photos/a.167928764870099/168258934837082/"></div>
+            </div>
+        </div>
+        <div class="exp-inner-2">
+            <div class="acn-box">
+                <span style="font-weight:500; font-size: large;">Co-Founder </span><br>
+                <span style="font-weight:normal; font-size: medium;">Wizard Library </span>
+                <br><i> May 2020 – Present Bangkok, Thailand </i><br>
+                <span style="font-weight:200; font-size:medium;">
+                    <li>EduTech - Disruption
+                    </li>
+                    <li>Educational platform and media, Wizard Library, aims to share business and scientific knowledge
+                        to all people.
+                    </li>
+                    <li>
+                        Team: 4 people ( Chief Executive Officer, Developer, UX/UI Designer, Project Manager)
+                    </li>
+                    <b>Facebook :</b>
+                    <a target="_blank" href="https://linkedin.com/in/warissarac">Wizard Library</a>
+
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- projects -->
+    <div class="flex-container-5 fade-in " id="project">
 
 
         <div class="card card-custom" style="border-radius: 20px; background-color:#fff">
@@ -627,11 +824,13 @@
                 <div class="card-body">
                     <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Smart City Week Hackathon
                             2020</span></h5>
-                    <p class="card-text"> <span style="font-weight:400; font-size:medium; ">The Winner | The Best
+                    <p class="card-text"> <span style="font-weight:400; font-size:medium; font-style: oblique;">The
+                            Winner | The Best
                             Solution
-                            for Slum</span>
-                        <span style="font-weight:200; font-size:small; ">
+                            for Slum
                             <br>Organized by United Nations, KRIS, 4 Regions Slum Network
+                        </span>
+                        <span style="font-weight:200; font-size:small; ">
                             <br> We innovated the Kiosk for helping slums to access their right from government, finding
                             jobs, and report the
                             problem in their society. We have discussed with people there and they have to fight a lot
@@ -672,14 +871,16 @@
                 <div class="card-body">
                     <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Delta’s Cup Competition
                             2019 </span></h5>
-                    <p class="card-text"> <span style="font-weight:400; font-size:medium; ">1st prize Delta’s Cup
+                    <p class="card-text"> <span style="font-weight:400; font-size:medium; font-style: oblique;">1st
+                            prize Delta’s Cup
                             Competition Thailand
                             <br> 3rd prize Delta’s World Cup Competition @ Jiangsu, China</span>
                         <span style="font-weight:200; font-size:small; ">
                             <br>Organized by Delta Electronics PCL. Jiangsu, China.
                             <br> Design and develop the Augmented Reality(AR) project for industry solving the 4.0
                             industrial problem using Industrial Internet of Things(IIoT) – functions to observe and
-                            monitor the robot or machine.</span>
+                            monitor the robot or machine.
+                            <br><b>Relevant technology:</b> <u>AR/VR, 3D Design CAD</u></span>
                     </p>
                     <a class="btn btn-outline-secondary" target="_blank" href="https://youtu.be/NgVmCw9M3T0">See
                         more</a>
@@ -702,8 +903,9 @@
                 <div class="card-body">
                     <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">International Seminar on
                             Technology for sustainability 2018 </span></h5>
-                    <p class="card-text"> <span style="font-weight:400; font-size:medium; ">1st prize for the Best
-                            Amazon Web Services Granted by Amazon
+                    <p class="card-text"> <span style="font-weight:400; font-size:medium; font-style: oblique; ">1st
+                            prize for the Best
+                            Amazon Web Services Granted by Amazon Web Services, Singapore
                             <br>1st prize for the Best Sustainability Award (2018) granted by Kumamoto National
                             Institute of Technology</span>
                         <span style="font-weight:200; font-size:small; ">
@@ -717,10 +919,10 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="flex-container-5">
+        <!-- 
+    <div class="flex-container-5"> -->
 
         <div class="card card-custom" style="border-radius: 20px; background-color:#fff;">
             <!-- <img class="card-img-top" src="img/ex1.JPG" alt="Card image" style="width:95%"> -->
@@ -732,7 +934,8 @@
                 <div class="card-body">
                     <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Youth representative of
                             United nations </span></h5>
-                    <p class="card-text"> <span style="font-weight:400; font-size:medium; ">Guest Speaker at UN75
+                    <p class="card-text"> <span style="font-weight:400; font-size:medium; font-style: oblique;">Guest
+                            Speaker at UN75
                             Special Exhibit 2020 at Central World, Bangkok, Thailand.
                         </span>
                         <span style="font-weight:200; font-size:small; ">
@@ -758,13 +961,15 @@
             <div class="card-body">
                 <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Automatics Endurance Test for
                         Ventilator</span></h5>
-                <p class="card-text"> <span style="font-weight:400; font-size:medium; ">Computer Vision and Image
+                <p class="card-text"> <span style="font-weight:400; font-size:medium; font-style: oblique;">Computer
+                        Vision and Image
                         Processing project at Robotics and AI Engineering, KMITL
                     </span>
                     <span style="font-weight:200; font-size:small; ">
-                        <br> Due to COVID-19, I am doing the project to help testing the ventilator pumping for KMITL
-                        Ventilator. It will be used in hospital that do not have enough equipment to take care of
+                        <br> Due to COVID-19, I am doing the project to help testing the ventilator for KMITL
+                        Ventilator. It will be used in hospital, where do not have equipment to take care of
                         patient.
+                        <br><b>Relevant technology:</b> <u>Python, Computer Vision, Image Processing</u>
                     </span>
                 </p>
                 <a class="btn btn-outline-secondary" target="_blank" href="https://youtu.be/pcUvXyqLyjU">See
@@ -785,26 +990,53 @@
                 <h5 class="card-title"> <span style="font-weight:400; font-size:large; ">Voice assistance platform with
                         Line
                         project </span></h5>
-                <p class="card-text"> <span style="font-weight:400; font-size:medium; "> at Robotics and AI Engineering,
+                <p class="card-text"> <span style="font-weight:400; font-size:medium;font-style: oblique; "> at Robotics
+                        and AI Engineering,
                         KMITL
                     </span>
                     <span style="font-weight:200; font-size:small; ">
                         <br>
                         Develop the chat box on website and connect to Line platform using Google Dialogflow.
-                        <br>Related technology: Django, Python, JavaScript, HTML5, CSS3, Line
+
+                        <br><b>Relevant technology:</b> <u>Django, Python, JavaScript, HTML5, CSS3, Line</u>
                     </span>
                 </p>
                 <a class="btn btn-outline-secondary" target="_blank" href="https://youtu.be/Cl5m3CVQYoU">See
                     more</a>
             </div>
         </div>
+        <!-- </div> -->
     </div>
 
-
-    <div class="flex-container-6" id="exp">
-        <span style="font-weight:400; font-size:large; ">Project and Competition Experience With</span>
-        <img style="height: 450px; width: 1200px;" src="img/logo-pro.png">
-
+    <!-- contact -->
+    <div class="flex-container-6 fade-in" id="contact">
+        <!-- Contact -->
+        <!-- <section class="wrapper style1 content-align-left" id="contact">
+            <div class="inner medium">
+                <header>
+                    <h2> <strong>Contact Me</strong></h2>
+                    <span style="justify-content: left;">Please feel free to connect with me. You may download my resume
+                        to know more about me, such as my interests and transcript.</span>
+                    <hr>
+                </header>
+                <div class="icons">
+                    <p class="icon-paragraph-contact"><a class="icon solid style2 fa-phone icon-margin"> <span>HP: +66
+                                90 917 7506</span></a></p>
+                    <p class="icon-paragraph-contact"><a href="https://www.linkedin.com/in/thanaphat-jiamcharoendet/"
+                            target="_blank" class="icon brands style2 fa-linkedin icon-margin">
+                            <span>https://www.linkedin.com/in/thanaphat-jiamcharoendet/</span></a>
+                    </p>
+                    <p class="icon-paragraph-contact"><a href="/docs/resume & transcript.pdf" target="_blank"
+                            class="icon solid style2 fa-save icon-margin" target="_blank"> <span><u>Download
+                                    Resume</u></span></a></p>
+                    <p class="icon-paragraph-contact"><a href="mailto:thanaphat.ji@outlook.co.th"
+                            class="icon style2 fa-envelope icon-margin"> <span>thanaphat.ji@outlook.co.th</span></a></p>
+                    <p class="icon-paragraph-contact"><a href="https://github.com/thanaphatJ1452" target="_blank"
+                            class="icon brands solid style2 fa-github icon-margin"> <span>GitHub:
+                                https://github.com/thanaphatJ1452</span></a></p>
+                </div>
+            </div>
+        </section> -->
     </div>
 </body>
 
