@@ -337,9 +337,9 @@
         flex-flow: wrap;
         width: 100%;
         /* height: 700px; */
-        padding: 2%;
+        padding-left: 2%;
         padding-bottom: 5%;
-        padding-top: 10%;
+        /* padding-top: 10%; */
         overflow: hidden;
         justify-content: space-between;
         /* background:  black; */
@@ -496,10 +496,28 @@
         }
     }
 </style>
+
+<!-- contact -->
+<style>
+    .con-box {
+        width: 100%;
+        padding-top: 2%;
+        padding-left: 10%;
+        padding-bottom: 10%;
+    }
+
+    .con-box-2 {
+        width: 90%;
+    }
+
+    .icon {
+        width: 10%;
+    }
+</style>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light"
         style="box-shadow:10px 5px 10px rgba(0, 0, 0, 0.2); z-index: 9; position: fixed; width: 100%; background-color:rgba(255, 255, 255, 0.9);">
-        <a class="navbar-brand" style="font-weight:300; color: black;">Warissara's | </a>
+        <a class="navbar-brand" href="#about"style="font-weight:300; color: black;">Warissara's | </a>
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -515,6 +533,10 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="scroll-behavior: smooth;" href="#project">Project</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="scroll-behavior: smooth;" href="#cv">Resume</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="scroll-behavior: smooth;" href="#contact">Contact</a>
@@ -536,15 +558,12 @@
                     <a class="nav-link" target="_blank" href="https://github.com/mywarissara/">GitHub</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="/warissara_resume_transcript.pdf">Resume</a>
+                    <a class="nav-link" target="_blank" href="/warissara_resume_transcript.pdf">Download Resume</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="/grade.pdf">Transcript</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="mailto: c.warissara@outlook.com">E-Mail</a>
-                </li>
-
+                
             </ul>
         </div>
     </nav>
@@ -565,7 +584,7 @@
 <body>
 
     <!-- header image -->
-    <div class="flex-container-1">
+    <div class="flex-container-1" id="about">
         <img class="img" style="object-fit: contain;" src="img/profile.jpg">
 
         <!-- <img class="img-head" src="img/head.png"> -->
@@ -595,8 +614,6 @@
                         I want to be an AI specialist with high leadership skill to enhance the productivity and
                         efficiency of the
                         team.
-
-
                         <br>
 
                         <br>
@@ -609,7 +626,11 @@
                     <span style="font-weight:200; font-size:medium;">
                         I am an adaptive, high confident, and enthusiastic person, so I can work with pressure very
                         well. I am capable of managing things to meet the goal. My co-workers and my colleagues claim
-                        that management and planning are my outstanding other than technology skills.</span>
+                        that management and planning are my outstanding other than technology skills.
+                        <br><br>
+                        <b>Skills:</b><u> Python, C, HTML5, CSS3, Computer Vision, Django, Line Development, ROS,
+                            Linux</u>
+                    </span>
                 </ul>
 
             </div>
@@ -718,7 +739,7 @@
             </div>
         </div>
 
-        <div class="exp-inner-1" >
+        <div class="exp-inner-1">
             <div class="exp-logo">
                 <img style="object-fit: contain; width: 350px; padding-left: 10%;" src="img/voniq.png">
             </div>
@@ -747,7 +768,7 @@
         <div class="exp-inner-1">
             <div class="exp-logo">
                 <!-- <img style="object-fit: contain; width: 400px;" src="img/accenture-logo.png"> -->
-                <iframe width="460" height="300" src="https://www.youtube.com/embed/G0SRetfUW9w" frameborder="0"
+                <iframe width="460" height="250" src="https://www.youtube.com/embed/G0SRetfUW9w" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
@@ -774,7 +795,7 @@
         <div class="exp-inner-1">
             <div class="exp-logo">
                 <!-- <img style="object-fit: contain; width: 350px; padding-left: 10%;" src="img/voniq.png"> -->
-                <div style="width: 450px; height: 400px;" class="fb-post"
+                <div style="width: 450px; height: 300px;" class="fb-post"
                     data-href="https://www.facebook.com/WizardLibrary/photos/a.167928764870099/168258934837082/"></div>
             </div>
         </div>
@@ -800,10 +821,13 @@
         </div>
     </div>
 
+    <div id="project"class="fade-in"style="padding-left: 10%; padding-top: 5%; padding-bottom: 1%; background-color: #eeeeee;">
+        <span style="font-weight:bold; font-size:xx-large; color: black;"><b>Projects</b></span>
+        <hr>
+    </div>
     <!-- projects -->
-    <div class="flex-container-5 fade-in " style="background-color: #eeeeee;" id="project">
-
-
+    <div class="flex-container-5 fade-in " style="background-color: #eeeeee; padding-left: 2%;" >
+        
         <div class="card card-custom" style="border-radius: 20px; background-color:#fff">
             <!-- <img class="card-img-top" src="img/ex1.JPG" alt="Card image" style="width:95%"> -->
             <div class=" slideshow-container">
@@ -1008,36 +1032,54 @@
         <!-- </div> -->
     </div>
 
+    <div class="con-box-2" style="padding-top: 5%; padding-left: 10%;" id="cv">
+        <span style="font-weight:bold; font-size:xx-large; color: black;"><b>Resume</b></span>
+        <hr>
+    </div>
+
+    <div style="width:100%; display: flex; justify-content: center; padding-bottom: 5%;">
+        <iframe src="warissara_resume_transcript.pdf#toolbar=0" width="800px" height="800px">
+        </iframe>
+    </div>
+
+
     <!-- contact -->
-    <div class="flex-container-6 fade-in" id="contact">
+    <div class="flex-container-6" id="contact" style="background-color: #eeeeee; ">
 
         <!-- Contact -->
-        <!-- <section class="wrapper style1 content-align-left" id="contact">
-            <div class="inner medium">
-                <header>
-                    <h2> <strong>Contact Me</strong></h2>
-                    <span style="justify-content: left;">Please feel free to connect with me. You may download my resume
-                        to know more about me, such as my interests and transcript.</span>
-                    <hr>
-                </header>
-                <div class="icons">
-                    <p class="icon-paragraph-contact"><a class="icon solid style2 fa-phone icon-margin"> <span>HP: +66
-                                90 917 7506</span></a></p>
-                    <p class="icon-paragraph-contact"><a href="https://www.linkedin.com/in/thanaphat-jiamcharoendet/"
-                            target="_blank" class="icon brands style2 fa-linkedin icon-margin">
-                            <span>https://www.linkedin.com/in/thanaphat-jiamcharoendet/</span></a>
-                    </p>
-                    <p class="icon-paragraph-contact"><a href="/docs/resume & transcript.pdf" target="_blank"
-                            class="icon solid style2 fa-save icon-margin" target="_blank"> <span><u>Download
-                                    Resume</u></span></a></p>
-                    <p class="icon-paragraph-contact"><a href="mailto:thanaphat.ji@outlook.co.th"
-                            class="icon style2 fa-envelope icon-margin"> <span>thanaphat.ji@outlook.co.th</span></a></p>
-                    <p class="icon-paragraph-contact"><a href="https://github.com/thanaphatJ1452" target="_blank"
-                            class="icon brands solid style2 fa-github icon-margin"> <span>GitHub:
-                                https://github.com/thanaphatJ1452</span></a></p>
-                </div>
+        <div class="con-box">
+            <div class="con-box-2" style="padding-top: 5%; padding-left: 2%;" >
+                <span style="font-weight:bold; font-size:xx-large; color: black;"><b>Contact</b></span>
+                <hr>
             </div>
-        </section> -->
+        
+            <div class="con-box-2">
+                <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/warissarac/"><img
+                    style=" width:70px; object-fit: contain; padding: 20px;" src="img/linkedin.png"><span
+                    style="font-weight:lighter; font-size:large; color: black;"><b>https://www.linkedin.com/in/warissarac/</b></span></a>
+                <a class="nav-link" target="_blank" href="https://github.com/mywarissara/"><img
+                    style=" width:70px; object-fit: contain; padding: 20px;" src="img/github.png"><span
+                    style="font-weight:lighter; font-size:large; color: black;"><b>https://github.com/mywarissara</b></span></a>
+                <a class="nav-link" target="_blank" href="tel: +6689-201-0168"><img
+                        style=" width:70px; object-fit: contain; padding: 20px;" src="img/phone-call.png"><span
+                        style="font-weight:lighter; font-size:large; color: black;"><b>(+66) 89-201-0168</b></span></a>
+                <a class="nav-link" target="_blank" href="mailto: c.warissara@outlook.com"><img
+                        style=" width:70px; object-fit: contain; padding: 20px;" src="img/mail.png"> <span
+                        style="font-weight:lighter; font-size:large; color: black;"><b>c.warissara@outlook.com</b></span></a>
+                <a class="nav-link" target="_blank" href="https://goo.gl/maps/nyNCucB4wfsXH66j6"><img
+                        style="width:70px; object-fit: contain; padding: 20px;" src="img/placeholder.png"> <span
+                        style="font-weight:lighter; font-size:large; color: black;"><b>99/266 Sathorn-Taksin rd.,
+                            Bukkhalo, Thonburi, Bangkok, 10600</b></span></a>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.0115745697904!2d100.48129731485474!3d13.717748701777522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2985f6bf4de05%3A0x5d48ac54024aa959!2z4LmA4LiU4Lit4Liw4Lij4Li54LihIOC4quC4suC4l-C4oy3guJXguLLguIHguKrguLTguJk!5e0!3m2!1sth!2sth!4v1605282542577!5m2!1sth!2sth"
+                    width="800" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+            <br><br>
+            <hr>
+            <span style="font-weight:lighter; font-size:medium; color: black;">Copyright © 2020 (Ms.) Warissara Chawalitsoonthorn | Update on Nov 2020</span>
+        </div>
+
     </div>
 </body>
 
